@@ -195,12 +195,13 @@
             color: #fff; /* Cor do texto do tooltip */
             padding: 8px 12px;
             border-radius: 5px;
-            white-space: nowrap;
+            white-space: normal;
             font-size: 0.9em;
             opacity: 0; /* Invisível por padrão */
             pointer-events: none; /* Evita interferência com o mouse */
             transition: opacity 0.3s ease;
             z-index: 10; /* Coloca o tooltip acima de outros elementos */
+            max-width: 80vw;
         }
         
         /* Mostra o tooltip ao passar o mouse */
@@ -353,6 +354,14 @@
             .subtema-title {
                 font-size: 1.4em;
             }
+
+            .especificacoes::after {
+                font-size: 12px;
+                max-width: 80vw; /* Limita a largura da tooltip em 80% da largura da tela */
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+            }
         
             .topic-item {
                 font-size: 1em;
@@ -393,6 +402,13 @@
         
             .subtema-title {
                 font-size: 1.3em;
+            }
+
+            .especificacoes::after {
+                font-size: 11px;
+                max-width: 90vw; /* Limita a largura da tooltip em 90% da largura da tela */
+                left: 50%;
+                transform: translateX(-50%);
             }
         
             .topic-item {
