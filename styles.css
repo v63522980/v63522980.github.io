@@ -138,6 +138,10 @@
             color: #444;
             margin-bottom: 20px;
         }
+
+        .align-item{
+            text-align: justify;
+        }
         
         .topics-list {
             list-style: none;
@@ -195,7 +199,7 @@
             color: #fff; /* Cor do texto do tooltip */
             padding: 8px 12px;
             border-radius: 5px;
-            white-space: normal;
+            white-space: nowrap;
             font-size: 0.9em;
             opacity: 0; /* Invisível por padrão */
             pointer-events: none; /* Evita interferência com o mouse */
@@ -409,6 +413,8 @@
                 max-width: 90vw; /* Limita a largura da tooltip em 90% da largura da tela */
                 left: 50%;
                 transform: translateX(-50%);
+                white-space: normal;
+                text-align: justify;
             }
         
             .topic-item {
@@ -451,6 +457,11 @@
         
             .subtema-title {
                 font-size: 1.2em;
+            }
+
+            .especificacoes::after{
+                white-space: normal;
+                text-align: justify;
             }
         
             .topic-item {
