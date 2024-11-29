@@ -1,0 +1,450 @@
+        /* Estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Cabeçalho */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0078d7;
+            padding: 20px 20px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-btn {
+            padding: 10px 15px;
+            font-family: 'Arial', sans-serif;
+            background-color: #800080; /* Roxo */
+            color: white; /* Texto branco */
+            font-size: 0.9em; /* Letras menores */
+            border: none;
+            border-radius: 8px; /* Bordas arredondadas */
+            cursor: pointer;
+            text-transform: uppercase; /* Letras maiúsculas */
+            letter-spacing: 0.5px; /* Menor espaçamento entre letras */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            margin: 10px 0; /* Espaçamento entre botões */
+            display: block; /* Torna os botões elementos de bloco */
+            margin: 10px auto; /* Centraliza horizontalmente */
+        }
+        
+        .dropdown-btn:hover {
+            background-color: #9B4D9A;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f8f8f8;
+            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 8px;
+        }
+        
+        .dropdown-content a {
+            color: #555;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #0078d7;
+            color: white;
+            border-radius: 5px;
+            margin: 2px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block; /* Mostra os links ao passar o mouse */
+        }
+        
+        .logo img {
+            width: 60px;
+        }
+        
+        .header-info {
+            display: flex;
+            align-items: center; /* Centraliza verticalmente os itens */
+            gap: 20px; /* Espaçamento entre itens */
+            font-size: 1.1em;
+        }
+        
+        /* Alinhamento centralizado para os textos */
+        .header-info div {
+            text-align: center;
+        }
+        /* Estilização da área MAIN */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-section {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .video-section iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            border-radius: 10px;
+        }
+        
+        /* Estilização da área de seção */
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #0078d7;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+        
+        .subtema-title {
+            font-size: 1.5em;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        
+        .topics-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .topic-item {
+            padding-left: 20px;
+            position: relative;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+            transition: color 0.3s, transform 0.3s ease;
+        }
+        
+        .topic-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #800080;
+            font-size: 1.3em;
+        }
+        
+        .topic-item:hover {
+            color: #0078d7;
+            cursor: pointer;
+            text-decoration: underline;
+            transform: translateX(5px);
+        }
+        
+        p {
+            text-indent: 1em; /* Define o tamanho da indentação (exemplo: 2em) */
+            margin-bottom: 1em; /* Adiciona um espaço entre os parágrafos */
+        }
+        
+        .especificacoes {
+            position: relative;
+            cursor: pointer;
+            color: #800080;
+            text-shadow: #555 0,8px 0,8px 0,8px;
+        }
+        
+        .especificacoes:hover{
+            color: #9B4D9A;
+        }
+        
+        /* Estilização do tooltip */
+        .especificacoes::after {
+            content: attr(data-tooltip); /* Pega o texto do atributo data-tooltip */
+            position: absolute;
+            bottom: 150%; /* Coloca acima do texto */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333; /* Cor de fundo do tooltip */
+            color: #fff; /* Cor do texto do tooltip */
+            padding: 8px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 0.9em;
+            opacity: 0; /* Invisível por padrão */
+            pointer-events: none; /* Evita interferência com o mouse */
+            transition: opacity 0.3s ease;
+            z-index: 10; /* Coloca o tooltip acima de outros elementos */
+        }
+        
+        /* Mostra o tooltip ao passar o mouse */
+        .especificacoes:hover::after {
+            opacity: 1; /* Torna visível o tooltip */
+        }
+        
+        /* Estilo geral para botões */
+        button {
+            padding: 10px 15px;
+            font-family: 'Arial', sans-serif;
+            background-color: #800080; /* Roxo */
+            color: white; /* Texto branco */
+            font-size: 0.9em; /* Letras menores */
+            border: none;
+            border-radius: 8px; /* Bordas arredondadas */
+            cursor: pointer;
+            text-transform: uppercase; /* Letras maiúsculas */
+            letter-spacing: 0.5px; /* Menor espaçamento entre letras */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            margin: 10px 0; /* Espaçamento entre botões */
+            display: block; /* Torna os botões elementos de bloco */
+            margin: 10px auto; /* Centraliza horizontalmente */
+        }
+        
+        /* Hover para todos os botões */
+        button:hover {
+            background-color: #9B4D9A; /* Roxo mais claro */
+            transform: scale(1.05); /* Leve aumento */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Foco para todos os botões */
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(123, 58, 123, 0.5); /* Destaque */
+        }
+        
+        /* Estilo quando botão é clicado */
+        button:active {
+            transform: scale(0.98); /* Leve redução */
+            background-color: #6D006D; /* Roxo mais escuro */
+        }
+        
+        /* Seção de PIX */
+        .pix-section {
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .pix-section h2 {
+            font-size: 1.6em;
+            color: #0078d7;
+            margin-bottom: 15px;
+        }
+        
+        .pix-section p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+            text-indent: 0em; /* Define o tamanho da indentação (exemplo: 2em) */
+            margin-bottom: 0em; /* Adiciona um espaço entre os parágrafos */
+        }
+        
+        .pix-info {
+            margin: 20px 0;
+        }
+        
+        .pix-qr-code img {
+            border-radius: 10px;
+        }
+        
+        /* Botão para download */
+        .download-btn {
+            padding: 10px 18px;
+            background-color: #800080;
+            color: white;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            margin: 10px;
+            display: inline-block;
+        }
+        
+        .download-btn:hover {
+            background-color: #9B4D9A;
+            transform: scale(1.05);
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        
+        footer .social-icons {
+            margin-top: 10px;
+        }
+        
+        footer .social-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.7em;
+            margin: 0 20px;
+        }
+        
+        footer p {
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        
+        footer .cnpj {
+            font-size: 1em;
+            margin-top: 5px;
+        }
+        
+        /* RESPONSIVIDADE - Adaptação para telas menores */
+        
+        /* Para telas de 1200px ou menos (tablets e dispositivos maiores) */
+        @media (max-width: 1200px) {
+            .main{
+                margin: 20px;;
+            }
+        
+            .header-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .video-section iframe {
+                height: 400px;
+            }
+        
+            .section-title {
+                font-size: 1.8em;
+            }
+        
+            .subtema-title {
+                font-size: 1.4em;
+            }
+        
+            .topic-item {
+                font-size: 1em;
+            }
+        
+            .pix-section h2 {
+                font-size: 1.4em;
+            }
+        
+            .download-btn {
+                width: 100%;
+            }
+        }
+        
+        /* Para telas de 768px ou menos (celulares em modo paisagem e tablets pequenos) */
+        @media (max-width: 768px) {
+            .main{
+                margin: 15px;;
+            }
+        
+            header {
+                padding: 10px;
+            }
+        
+            .header-info {
+                font-size: 0.9em;
+                gap: 10px;
+            }
+        
+            .video-section iframe {
+                height: 300px;
+            }
+        
+            .section-title {
+                font-size: 1.6em;
+            }
+        
+            .subtema-title {
+                font-size: 1.3em;
+            }
+        
+            .topic-item {
+                font-size: 0.9em;
+            }
+        
+            .pix-section h2 {
+                font-size: 1.3em;
+            }
+        
+            .download-btn {
+                font-size: 1em;
+                width: 100%;
+            }
+        }
+        
+        /* Para telas de 480px ou menos (celulares em modo retrato) */
+        @media (max-width: 480px) {
+            .main{
+                margin: 10px;;
+            }
+        
+            .logo img {
+                width: 50px;
+            }
+        
+            .header-info {
+                font-size: 0.8em;
+                align-items: center;
+            }
+        
+            .video-section iframe {
+                height: 250px;
+            }
+        
+            .section-title {
+                font-size: 1.4em;
+            }
+        
+            .subtema-title {
+                font-size: 1.2em;
+            }
+        
+            .topic-item {
+                font-size: 0.8em;
+            }
+        
+            footer .social-icons a {
+                font-size: 1.5em;
+                margin: 0 10px;
+            }
+        
+            .download-btn {
+                font-size: 0.9em;
+                width: 100%;
+            }
+        }
