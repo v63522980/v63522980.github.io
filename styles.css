@@ -334,7 +334,7 @@
         @media (max-width: 1200px) {
             .main{
                 margin: 20px;
-                padding: 15px;
+                padding: 0px;
             }
         
             .header-info {
@@ -371,7 +371,7 @@
         @media (max-width: 768px) {
             .main{
                 margin: 15px;
-                padding: 10px;
+                padding: 0px;
             }
         
             header {
@@ -413,7 +413,7 @@
         @media (max-width: 480px) {
             .main{
                 margin: 10px;
-                padding: 5px;
+                padding: 0px;
             }
         
             .logo img {
