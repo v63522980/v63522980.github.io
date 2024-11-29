@@ -333,7 +333,8 @@
         /* Para telas de 1200px ou menos (tablets e dispositivos maiores) */
         @media (max-width: 1200px) {
             .main{
-                margin: 20px;;
+                margin: 20px;
+                padding: 15px;
             }
         
             .header-info {
@@ -369,7 +370,8 @@
         /* Para telas de 768px ou menos (celulares em modo paisagem e tablets pequenos) */
         @media (max-width: 768px) {
             .main{
-                margin: 15px;;
+                margin: 15px;
+                padding: 10px;
             }
         
             header {
@@ -410,7 +412,8 @@
         /* Para telas de 480px ou menos (celulares em modo retrato) */
         @media (max-width: 480px) {
             .main{
-                margin: 10px;;
+                margin: 10px;
+                padding: 5px;
             }
         
             .logo img {
